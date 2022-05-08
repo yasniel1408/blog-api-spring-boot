@@ -13,4 +13,6 @@ import lombok.ToString;
 @ToString(callSuper = true)
 public class CategoryServiceResponseDto extends BaseServiceResponseDto {
     private String name;
+    private String description;
+    private String createdDate;
 }

@@ -1,4 +1,4 @@
-package com.blog.category.dto;
+package com.blog.common.dao;
 
 import com.blog.common.config.PageInformation;
 import com.blog.common.dto.BaseServiceRequestDto;

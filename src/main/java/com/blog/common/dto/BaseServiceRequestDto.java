@@ -9,5 +9,5 @@ import lombok.Getter;
 @Data
 @Getter
 public abstract class BaseServiceRequestDto {
-
+    private Long id;
 }

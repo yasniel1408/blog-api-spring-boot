@@ -1,5 +1,6 @@
 package com.blog.category.dto;
 
+import com.blog.common.dao.BasePaginatedServiceRequest;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
