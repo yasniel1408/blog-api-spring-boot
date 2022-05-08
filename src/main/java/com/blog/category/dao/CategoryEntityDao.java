@@ -8,7 +8,7 @@ import javax.persistence.*;
 
 @Entity
 @Data
-@Table(name = "tb_category")
+@Table(name = "category")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -19,8 +19,4 @@ public class CategoryEntityDao extends BaseAnonymousEntityDao {
     @Column(name = "name")
     @NaturalId
     private String name;
-
-    @Column(name = "description")
-    private String description;
-
 }

@@ -19,7 +19,7 @@ public abstract class BaseAnonymousEntityDao {
      * Id
      */
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO) // SQLite = "AUTO", OTROS = "IDENTITY"
     private Long id;
 
     /**
