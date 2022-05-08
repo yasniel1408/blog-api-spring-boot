@@ -3,6 +3,7 @@ package com.blog.category.service.helper;
 import com.blog.category.dao.CategoryEntityDao;
 import com.blog.category.dto.CategoryServiceRequestDto;
 import lombok.AllArgsConstructor;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
 /**
@@ -12,15 +13,19 @@ import org.springframework.stereotype.Component;
 @AllArgsConstructor
 public class CategoryEntityCreator {
 
+    private final ModelMapper modelMapper;
+
     /**
      * Create category entity.
      *
-     * @param request {@link CategoryServiceRequestDto} the category create service request
-     * @return {@link com.blog.category.dao.CategoryEntityDao} the category entity
+     * @param categoryServiceRequestDto {@link CategoryServiceRequestDto} the category create service request
+     * @return {@link CategoryEntityDao} the category entity
      */
-    CategoryEntityDao create(CategoryServiceRequestDto request) {
-        CategoryEntityDao categoryEntityDao = new CategoryEntityDao();
-        categoryEntityDao.setName(request.getName());
+    public CategoryEntityDao create(CategoryServiceRequestDto categoryServiceRequestDto) {
+        CategoryEntityDao categoryEntityDao = null;
+        if (categoryServiceRequestDto != null) {
+            categoryEntityDao = modelMapper.map(categoryServiceRequestDto, CategoryEntityDao.class);
+        }
         return categoryEntityDao;
     }
 }

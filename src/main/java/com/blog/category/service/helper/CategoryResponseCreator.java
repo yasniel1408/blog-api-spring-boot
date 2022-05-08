@@ -14,7 +14,7 @@ public class CategoryResponseCreator {
     private final ModelMapper modelMapper;
 
     /**
-     * Instantiates a new Sample response creator.
+     * Instantiates a new Category response creator.
      *
      * @param modelMapper the model mapper
      */
@@ -23,10 +23,10 @@ public class CategoryResponseCreator {
     }
 
     /**
-     * Create sample service response.
+     * Create category service response.
      *
-     * @param categoryEntityDao the sample entity
-     * @return the sample service response
+     * @param categoryEntityDao the category entity
+     * @return the category service response
      */
     public CategoryServiceResponseDto create(CategoryEntityDao categoryEntityDao) {
         return modelMapper.map(categoryEntityDao, CategoryServiceResponseDto.class);
