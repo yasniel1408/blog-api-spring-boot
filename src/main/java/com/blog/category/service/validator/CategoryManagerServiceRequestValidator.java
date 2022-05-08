@@ -9,10 +9,10 @@ import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
 /**
- * The type Sample manager service request validator.
+ * The type Category manager service request validator.
  */
 @AllArgsConstructor
-public class CategoryManagerServiceRequestValidator implements ConstraintValidator<ValidSampleServiceRequest, CategoryServiceRequestDto> {
+public class CategoryManagerServiceRequestValidator implements ConstraintValidator<ValidCactegoryServiceRequest, CategoryServiceRequestDto> {
 
     private static final String NAME_ALREADY_EXISTS = "' name already exists";
 
@@ -49,10 +49,10 @@ public class CategoryManagerServiceRequestValidator implements ConstraintValidat
         return exist;
     }
 
-    private boolean doesNameExistAndIdIsDifferent(ConstraintValidatorContext context, String categoryName, Long sampleId) {
-        boolean exist = iCategoryRepository.existsByNameAndIdIsNot(categoryName, sampleId);
+    private boolean doesNameExistAndIdIsDifferent(ConstraintValidatorContext context, String categoryName, Long categoryId) {
+        boolean exist = iCategoryRepository.existsByNameAndIdIsNot(categoryName, categoryId);
         if (exist) {
-            setMessage(context, "'" + categoryName + CategoryManagerServiceRequestValidator.NAME_ALREADY_EXISTS + " for another sample");
+            setMessage(context, "'" + categoryName + CategoryManagerServiceRequestValidator.NAME_ALREADY_EXISTS + " for another category");
         }
         return exist;
     }

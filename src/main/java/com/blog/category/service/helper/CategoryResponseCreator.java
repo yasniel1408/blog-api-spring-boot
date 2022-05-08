@@ -6,7 +6,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
 /**
- * The type Sample response creator.
+ * The type Category response creator.
  */
 @Component
 public class CategoryResponseCreator {

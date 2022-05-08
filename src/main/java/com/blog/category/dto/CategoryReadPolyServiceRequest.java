@@ -6,7 +6,7 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 /**
- * The type Sample Paginated service request.
+ * The type Category Paginated service request.
  */
 @Data
 @EqualsAndHashCode(callSuper = true)

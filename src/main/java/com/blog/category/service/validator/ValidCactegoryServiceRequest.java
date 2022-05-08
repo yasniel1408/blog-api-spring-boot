@@ -6,13 +6,13 @@ import java.lang.annotation.*;
 
 
 /**
- * ValidSampleServiceRequest is the annotation that triggers the validation to happen on the Sample Manager Service Request.
+ * ValidCategoryServiceRequest is the annotation that triggers the validation to happen on the Category Manager Service Request.
  */
 @Documented
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = CategoryManagerServiceRequestValidator.class)
-public @interface ValidSampleServiceRequest {
+public @interface ValidCactegoryServiceRequest {
 
     /**
      * Message string.
