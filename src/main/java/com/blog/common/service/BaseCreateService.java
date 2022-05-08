@@ -1,7 +1,7 @@
 package com.blog.common.service;
 
-import com.blog.common.dto.BaseRequestDto;
-import com.blog.common.dto.BaseResponseDto;
+import com.blog.common.dto.BaseServiceRequestDto;
+import com.blog.common.dto.BaseServiceResponseDto;
 
 /**
  * The type Base create service.
@@ -9,7 +9,7 @@ import com.blog.common.dto.BaseResponseDto;
  * @param <I> the type parameter
  * @param <O> the type parameter
  */
-public abstract class BaseCreateService<I extends BaseRequestDto, O extends BaseResponseDto> extends BaseService {
+public abstract class BaseCreateService<I extends BaseServiceRequestDto, O extends BaseServiceResponseDto> extends BaseService {
 
     /**
      * Execute create o.

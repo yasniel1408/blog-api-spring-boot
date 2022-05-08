@@ -1,10 +1,9 @@
 package com.blog.category.service.helper;
 
 import com.blog.category.dao.CategoryEntityDao;
-import com.blog.category.dto.CategoryRequestDto;
+import com.blog.category.dto.CategoryServiceRequestDto;
 import com.blog.category.repository.ICategoryRepository;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
@@ -16,16 +15,16 @@ public class CategoryEntitySaver {
 
     private final ICategoryRepository iCategoryRepository;
 
-    private final CategoryEntitySaveCreator categoryEntitySaveCreator;
+    private final CategoryEntityCreator categoryEntityCreator;
 
     /**
      * Save question entity.
      *
-     * @param request {@link CategoryRequestDto} the question create service request
+     * @param request {@link CategoryServiceRequestDto} the question create service request
      * @return {@link CategoryEntityDao} the question entity
      */
-    public CategoryEntityDao save(CategoryRequestDto request) {
-        CategoryEntityDao categoryEntityDao = categoryEntitySaveCreator.create(request);
+    public CategoryEntityDao save(CategoryServiceRequestDto request) {
+        CategoryEntityDao categoryEntityDao = categoryEntityCreator.create(request);
         return iCategoryRepository.save(categoryEntityDao);
     }
 

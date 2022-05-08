@@ -1,22 +1,26 @@
 package com.blog.category.dao;
 
 import com.blog.common.dao.BaseAnonymousEntityDao;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import org.hibernate.annotations.NaturalId;
 
 import javax.persistence.*;
 
 @Entity
+@Data
 @Table(name = "tb_category")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@EqualsAndHashCode(callSuper = true)
+@ToString(callSuper = true)
 public class CategoryEntityDao extends BaseAnonymousEntityDao {
-    /**
-     * Name of Category
-     */
+    @Column(name = "name")
+    @NaturalId
     private String name;
+
+    @Column(name = "description")
+    private String description;
+
 }

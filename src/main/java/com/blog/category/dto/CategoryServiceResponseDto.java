@@ -1,6 +1,6 @@
 package com.blog.category.dto;
 
-import com.blog.common.dto.BaseResponseDto;
+import com.blog.common.dto.BaseServiceResponseDto;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
@@ -11,6 +11,6 @@ import lombok.ToString;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-public class CategoryResponseDto extends BaseResponseDto {
+public class CategoryServiceResponseDto extends BaseServiceResponseDto {
     private String name;
 }

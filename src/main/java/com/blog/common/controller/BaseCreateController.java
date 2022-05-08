@@ -1,7 +1,7 @@
 package com.blog.common.controller;
 
-import com.blog.common.dto.BaseRequestDto;
-import com.blog.common.dto.BaseResponseDto;
+import com.blog.common.dto.BaseServiceRequestDto;
+import com.blog.common.dto.BaseServiceResponseDto;
 import com.blog.common.service.BaseCreateService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,7 +18,7 @@ import java.net.URI;
  * @param <O> the type parameter
  * @param <S> the type parameter
  */
-public abstract class BaseCreateController<I extends BaseRequestDto, O extends BaseResponseDto, S extends BaseCreateService<I, O>> extends BaseController<S> {
+public abstract class BaseCreateController<I extends BaseServiceRequestDto, O extends BaseServiceResponseDto, S extends BaseCreateService<I, O>> extends BaseController<S> {
 
     /**
      * Create response entity.

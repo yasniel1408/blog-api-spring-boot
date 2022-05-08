@@ -15,6 +15,7 @@
     <description>blog-api-spring-boot</description>
     <properties>
         <java.version>11</java.version>
+        <querydsl.version>5.0.0</querydsl.version>
     </properties>
     <dependencies>
         <dependency>
@@ -25,6 +26,18 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.querydsl</groupId>
+            <artifactId>querydsl-apt</artifactId>
+            <version>${querydsl.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.querydsl</groupId>
+            <artifactId>querydsl-jpa</artifactId>
+            <version>${querydsl.version}</version>
         </dependency>
 
         <dependency>
@@ -56,6 +69,11 @@
         <dependency>
             <groupId>org.hibernate.validator</groupId>
             <artifactId>hibernate-validator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.jmnarloch</groupId>
+            <artifactId>modelmapper-spring-boot-starter</artifactId>
+            <version>1.1.0</version>
         </dependency>
     </dependencies>
 

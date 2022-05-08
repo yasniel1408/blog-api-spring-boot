@@ -8,7 +8,7 @@ import lombok.Getter;
  */
 @Data
 @Getter
-public abstract class BaseResponseDto {
+public abstract class BaseServiceResponseDto {
 
     private Long id;
 

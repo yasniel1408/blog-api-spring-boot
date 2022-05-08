@@ -1,16 +1,17 @@
 package com.blog.category.dto;
 
-import com.blog.common.dto.BaseRequestDto;
+import com.blog.common.dto.BaseServiceResponseDto;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 /**
- * CategoryRequestDto requests from the service to create category
+ * The category read poly service response.
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-public class CategoryRequestDto extends BaseRequestDto {
+public class CategoryReadPolyServiceServiceResponse extends BaseServiceResponseDto {
+
     private String name;
 }

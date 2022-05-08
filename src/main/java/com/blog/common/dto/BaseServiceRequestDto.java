@@ -8,6 +8,6 @@ import lombok.Getter;
  */
 @Data
 @Getter
-public abstract class BaseRequestDto {
+public abstract class BaseServiceRequestDto {
 
 }
