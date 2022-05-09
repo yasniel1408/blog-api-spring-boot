@@ -21,12 +21,9 @@ import javax.validation.constraints.Null;
 @ToString(callSuper = true)
 public class CategoryEntityDao extends BaseAnonymousEntityDao {
     @Column(name = "name")
-    @NaturalId
-    @UniqueElements(message = "There can be 2 equal names!")
     @NotNull
     private String name;
 
     @Column(name = "description")
-    @Null
     private String description;
 }

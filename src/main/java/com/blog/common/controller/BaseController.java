@@ -1,5 +1,6 @@
 package com.blog.common.controller;
 
+import com.blog.common.controller.helpers.ResponseEntityReadMonoCreator;
 import com.blog.common.service.BaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -15,5 +16,8 @@ public abstract class BaseController<S extends BaseService> {
      */
     @Autowired
     protected S service;
+
+    @Autowired
+    protected ResponseEntityReadMonoCreator responseEntityReadMonoCreator;
 
 }
