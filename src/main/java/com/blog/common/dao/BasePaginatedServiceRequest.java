@@ -1,6 +1,6 @@
 package com.blog.common.dao;
 
-import com.blog.common.config.PageInformation;
+import com.blog.common.config.paginate.PageInformation;
 import com.blog.common.dto.BaseServiceRequestDto;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

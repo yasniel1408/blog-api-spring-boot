@@ -1,4 +1,4 @@
-package com.blog.common.config;
+package com.blog.common.config.paginate;
 
 import lombok.Data;
 import org.springframework.data.domain.Sort;

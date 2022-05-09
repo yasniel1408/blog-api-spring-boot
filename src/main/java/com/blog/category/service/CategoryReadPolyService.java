@@ -9,7 +9,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import com.blog.category.dto.CategoryReadPolyServiceRequest;
 import com.blog.category.service.helper.CategoryResponseCreator;
-import com.blog.common.config.PageInformation;
+import com.blog.common.config.paginate.PageInformation;
 import com.blog.common.service.BaseReadPolyService;
 import lombok.AllArgsConstructor;
 import com.blog.category.repository.ICategoryRepository;
@@ -31,8 +31,8 @@ public class CategoryReadPolyService extends BaseReadPolyService<CategoryReadPol
     @Override
     protected Page<CategoryServiceResponseDto> executeRead(CategoryReadPolyServiceRequest categoryReadPolyServiceRequest) {
         PageInformation pageInformation = categoryReadPolyServiceRequest.getPageInformation();
-        int pageNumber = 0;
-        int pageSize = 100;
+        int pageNumber = 1;
+        int pageSize = 5;
         if (pageInformation != null) {
             pageNumber = pageInformation.getPage();
             pageSize = pageInformation.getSize();

@@ -1,6 +1,6 @@
 package com.blog.common.controller.helpers;
 
-import com.blog.common.config.ResponseHeaders;
+import com.blog.common.config.paginate.ResponseHeaders;
 import com.blog.common.dto.BaseServiceResponseDto;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
