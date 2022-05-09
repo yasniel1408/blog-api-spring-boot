@@ -31,8 +31,8 @@ public class CategoryReadPolyService extends BaseReadPolyService<CategoryReadPol
     @Override
     protected Page<CategoryServiceResponseDto> executeRead(CategoryReadPolyServiceRequest categoryReadPolyServiceRequest) {
         PageInformation pageInformation = categoryReadPolyServiceRequest.getPageInformation();
-        int pageNumber = 1;
-        int pageSize = 5;
+        int pageNumber = 0;
+        int pageSize = 25;
         if (pageInformation != null) {
             pageNumber = pageInformation.getPage();
             pageSize = pageInformation.getSize();

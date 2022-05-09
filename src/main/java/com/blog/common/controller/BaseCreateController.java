@@ -3,6 +3,7 @@ package com.blog.common.controller;
 import com.blog.common.dto.BaseServiceRequestDto;
 import com.blog.common.dto.BaseServiceResponseDto;
 import com.blog.common.service.BaseCreateService;
+import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -27,9 +28,9 @@ public abstract class BaseCreateController<I extends BaseServiceRequestDto, O ex
      * @return the response entity
      */
     @PostMapping
-//    @Operation(summary = "Create")
+    @Operation(summary = "Create")
     public ResponseEntity<O> create(@Valid @RequestBody I request) {
-        O response = service.create(request);
+        O response = service.executeCreate(request);
         ResponseEntity<O> responseEntity = createPostResponseEntity(response);
         return responseEntity;
     }

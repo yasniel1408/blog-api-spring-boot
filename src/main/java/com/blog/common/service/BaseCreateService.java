@@ -17,5 +17,5 @@ public abstract class BaseCreateService<I extends BaseServiceRequestDto, O exten
      * @param request the request
      * @return the o
      */
-    public abstract O create(I request);
+    public abstract O executeCreate(I request);
 }

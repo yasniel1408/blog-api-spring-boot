@@ -21,7 +21,7 @@ public class CategoryCreateService extends BaseCreateService<CategoryServiceRequ
     private final CategoryEntityCreator categoryEntityCreator;
 
     @Override
-    public CategoryServiceResponseDto create(CategoryServiceRequestDto categoryServiceRequestDto) {
+    public CategoryServiceResponseDto executeCreate(CategoryServiceRequestDto categoryServiceRequestDto) {
         CategoryEntityDao categoryEntityDaoToBeCreated = categoryEntityCreator.create(categoryServiceRequestDto);
         CategoryEntityDao categoryEntityDao = iCategoryRepository.save(categoryEntityDaoToBeCreated);
         return categoryResponseCreator.create(categoryEntityDao);

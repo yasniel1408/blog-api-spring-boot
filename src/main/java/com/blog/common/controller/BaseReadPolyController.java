@@ -4,6 +4,7 @@ import com.blog.common.controller.helpers.ResponseEntityCreator;
 import com.blog.common.dto.BaseServiceRequestDto;
 import com.blog.common.dto.BaseServiceResponseDto;
 import com.blog.common.service.BaseReadPolyService;
+import io.swagger.v3.oas.annotations.Operation;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
@@ -25,7 +26,7 @@ public abstract class BaseReadPolyController<I extends BaseServiceRequestDto, O 
      * @return the multiple
      */
     @GetMapping
-//    @Operation(summary = "Read poly")
+    @Operation(summary = "Read poly")
     public ResponseEntity<List<O>> read(I request, HttpServletResponse httpServletResponse) {
         Page<O> page = service.read(request);
         ResponseEntity<List<O>> responseEntity = responseEntityCreator.create(page, httpServletResponse);
