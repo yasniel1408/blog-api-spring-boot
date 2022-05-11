@@ -16,7 +16,11 @@ public abstract class BaseUpdateService<I extends BaseServiceRequestDto> extends
      */
     public void update(I request) {
 
+        logger.entry(request);
+
         executeUpdate(request);
+
+        logger.exit();
 
     }
 

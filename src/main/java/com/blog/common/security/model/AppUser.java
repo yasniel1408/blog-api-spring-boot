@@ -1,11 +1,11 @@
-package org.zenith.framework.security.model;
+package com.blog.common.security.model;
 
+import com.blog.user.dao.RoleEntity;
+import com.blog.user.dao.UserEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.zenith.data.training.entity.RoleEntity;
-import org.zenith.data.training.entity.UserEntity;
 
 import java.util.ArrayList;
 import java.util.Collection;

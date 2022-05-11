@@ -1,10 +1,10 @@
-package org.zenith.framework.security.service.helpers;
+package com.blog.common.security.service.helpers;
 
+import com.blog.common.security.model.IAppUser;
 import lombok.AllArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.data.domain.AuditorAware;
 import org.springframework.stereotype.Component;
-import org.zenith.framework.security.model.IAppUser;
 
 import java.util.Optional;
 

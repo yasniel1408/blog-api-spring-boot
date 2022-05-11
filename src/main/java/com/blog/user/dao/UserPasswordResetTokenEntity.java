@@ -1,4 +1,4 @@
-package org.zenith.data.training.entity;
+package com.blog.user.dao;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -9,7 +9,7 @@ import javax.persistence.Table;
 import java.util.Objects;
 
 /**
- * {@link UserVerificationTokenEntity} class represents the domain of the user_password_reset_token table.
+ * {@link org.zenith.data.training.entity.UserVerificationTokenEntity} class represents the domain of the user_password_reset_token table.
  */
 @Entity
 @Table(name = "user_password_reset_token")

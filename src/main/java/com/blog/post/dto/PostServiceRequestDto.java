@@ -1,7 +1,7 @@
-package com.blog.category.dto;
+package com.blog.post.dto;
 
-import com.blog.category.service.validator.ValidCactegoryServiceRequest;
 import com.blog.common.dto.BaseServiceRequestDto;
+import com.blog.post.service.validator.ValidPostServiceRequest;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
@@ -9,16 +9,22 @@ import lombok.ToString;
 import javax.validation.constraints.NotNull;
 
 /**
- * CategoryServiceRequestDto requests from the service to create category
+ * PostServiceRequestDto requests from the service to create post
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-@ValidCactegoryServiceRequest
-public class CategoryServiceRequestDto extends BaseServiceRequestDto {
+@ValidPostServiceRequest
+public class PostServiceRequestDto extends BaseServiceRequestDto {
 
     @NotNull
-    private String name;
+    private String title;
+
+    private String imgUrl;
 
     private String description;
+
+    @NotNull
+    private Long categoryId;
+
 }

@@ -28,8 +28,14 @@ public abstract class BaseReadPolyController<I extends BaseServiceRequestDto, O 
     @GetMapping
     @Operation(summary = "Read poly")
     public ResponseEntity<List<O>> read(I request, HttpServletResponse httpServletResponse) {
+        logger.entry(request);
+
         Page<O> page = service.read(request);
+
         ResponseEntity<List<O>> responseEntity = responseEntityCreator.create(page, httpServletResponse);
+
+        logger.exit(responseEntity);
+
         return responseEntity;
     }
 

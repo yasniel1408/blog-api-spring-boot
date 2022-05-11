@@ -1,4 +1,4 @@
-package org.zenith.framework.exception;
+package com.blog.common.exception;
 
 /**
  * The type Application server exception.

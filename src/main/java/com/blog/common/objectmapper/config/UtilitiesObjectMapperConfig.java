@@ -1,5 +1,6 @@
-package org.zenith.utilities.objectmapper.config;
+package com.blog.common.objectmapper.config;
 
+import com.blog.common.objectmapper.serialization.*;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.util.MinimalPrettyPrinter;
@@ -12,12 +13,6 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
-import org.zenith.utilities.objectmapper.serialization.CurrencyDeserializer;
-import org.zenith.utilities.objectmapper.serialization.CurrencySerializer;
-import org.zenith.utilities.objectmapper.serialization.DecimalDeserializer;
-import org.zenith.utilities.objectmapper.serialization.DecimalSerializer;
-import org.zenith.utilities.objectmapper.serialization.LocalDateSerializer;
-import org.zenith.utilities.objectmapper.serialization.LocalDateTimeSerializer;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

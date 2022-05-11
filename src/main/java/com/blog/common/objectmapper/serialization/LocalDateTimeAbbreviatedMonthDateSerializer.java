@@ -1,4 +1,4 @@
-package org.zenith.utilities.objectmapper.serialization;
+package com.blog.common.objectmapper.serialization;
 
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.JsonSerializer;

@@ -14,5 +14,5 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(ServiceEndpoints.CATEGORY_ENDPOINT)
 @Tag(name = "Category")
-public class SampleReadMonoController extends BaseReadMonoController<CategoryReadMonoServiceResponseDto, CategoryReadMonoService> {
+public class CategoryReadMonoController extends BaseReadMonoController<CategoryReadMonoServiceResponseDto, CategoryReadMonoService> {
 }

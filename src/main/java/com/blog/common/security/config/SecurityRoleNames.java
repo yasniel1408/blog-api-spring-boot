@@ -1,4 +1,4 @@
-package com.blog.common.config;
+package com.blog.common.security.config;
 
 public class SecurityRoleNames {
 

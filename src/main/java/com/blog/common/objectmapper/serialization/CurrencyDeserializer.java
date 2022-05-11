@@ -1,4 +1,4 @@
-package org.zenith.utilities.objectmapper.serialization;
+package com.blog.common.objectmapper.serialization;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -12,7 +12,7 @@ import java.math.RoundingMode;
 
 public class CurrencyDeserializer extends JsonDeserializer<BigDecimal> {
 
-    private NumberDeserializers.BigDecimalDeserializer delegate = NumberDeserializers.BigDecimalDeserializer.instance;
+    private final NumberDeserializers.BigDecimalDeserializer delegate = NumberDeserializers.BigDecimalDeserializer.instance;
 
     @Override
     public BigDecimal deserialize(JsonParser parser, DeserializationContext ctxt) throws IOException, JsonProcessingException {

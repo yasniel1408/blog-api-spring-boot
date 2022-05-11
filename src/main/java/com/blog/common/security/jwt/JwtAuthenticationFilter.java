@@ -1,5 +1,8 @@
-package com.blog.common.jwt;
+package com.blog.common.security.jwt;
 
+import com.blog.common.exception.model.MessageKey;
+import com.blog.common.security.model.AppUser;
+import com.blog.user.dao.UserEntity;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -9,9 +12,6 @@ import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import org.zenith.data.training.entity.UserEntity;
-import org.zenith.framework.exception.model.MessageKey;
-import org.zenith.framework.security.model.AppUser;
 
 import javax.servlet.FilterChain;
 import javax.servlet.http.HttpServletRequest;
@@ -22,7 +22,7 @@ import java.time.LocalTime;
 import java.time.ZoneId;
 import java.util.Date;
 
-import static org.zenith.framework.security.jwt.JwtAuthorizationFilter.*;
+import static com.blog.common.security.jwt.JwtAuthorizationFilter.*;
 
 /**
  * The type Jwt authentication filter, allow authentication and generate the security token.

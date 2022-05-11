@@ -1,19 +1,12 @@
-package org.zenith.data.training.entity;
+package com.blog.user.dao;
 
+import com.blog.common.dao.BaseAnonymousEntityDao;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.Hibernate;
 import org.hibernate.annotations.NaturalId;
-import org.zenith.data.postgresbase.entity.BaseAnonymousEntity;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
@@ -25,7 +18,7 @@ import java.util.Set;
 @Table(name = "app_user")
 @Getter
 @Setter
-public class UserEntity extends BaseAnonymousEntity {
+public class UserEntity extends BaseAnonymousEntityDao {
 
     @Column(name = "email")
     @NaturalId
@@ -58,8 +51,8 @@ public class UserEntity extends BaseAnonymousEntity {
                     name = "role_id"))
     private Set<RoleEntity> roleEntities;
 
-    @OneToMany(mappedBy = "userEntity", cascade = CascadeType.ALL)
-    private List<UserTrainingEntity> userTrainingEntities;
+//    @OneToMany(mappedBy = "userEntity", cascade = CascadeType.ALL)
+//    private List<UserTrainingEntity> userTrainingEntities;
 
     @Override
     public boolean equals(Object o) {

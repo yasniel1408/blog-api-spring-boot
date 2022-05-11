@@ -26,10 +26,13 @@ public abstract class BaseReadMonoController<O extends BaseServiceResponseDto, S
     @GetMapping("/{id}")
     @Operation(summary = "Read Mono")
     public ResponseEntity<O> read(@PathVariable Long id) {
+        logger.entry(id);
 
         O response = service.read(id);
 
         ResponseEntity<O> responseEntity = responseEntityReadMonoCreator.create(response);
+
+        logger.exit(responseEntity);
 
         return responseEntity;
     }

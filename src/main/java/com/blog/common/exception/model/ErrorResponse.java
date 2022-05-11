@@ -1,4 +1,4 @@
-package org.zenith.framework.exception.model;
+package com.blog.common.exception.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -1,9 +1,9 @@
-package com.blog.category.service;
+package com.blog.post.service;
 
-import com.blog.category.dao.CategoryEntityDao;
-import com.blog.category.dto.CategoryServiceRequestDto;
-import com.blog.category.repository.ICategoryRepository;
 import com.blog.common.service.BaseUpdateService;
+import com.blog.post.dao.PostEntityDao;
+import com.blog.post.dto.PostServiceRequestDto;
+import com.blog.post.repository.IPostRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -14,18 +14,20 @@ import java.util.Optional;
  */
 @Service
 @AllArgsConstructor
-public class CategoryUpdateService extends BaseUpdateService<CategoryServiceRequestDto> {
+public class PostUpdateService extends BaseUpdateService<PostServiceRequestDto> {
 
-    private final ICategoryRepository iCategoryRepository;
+    private final IPostRepository iPostRepository;
 
     @Override
-    protected void executeUpdate(CategoryServiceRequestDto categoryServiceRequestDto) {
-        Optional<CategoryEntityDao> notificationEntityOptional = iCategoryRepository.findById(categoryServiceRequestDto.getId());
+    protected void executeUpdate(PostServiceRequestDto postServiceRequestDto) {
+        Optional<PostEntityDao> notificationEntityOptional = iPostRepository.findById(postServiceRequestDto.getId());
         if (notificationEntityOptional.isPresent()) {
-            CategoryEntityDao retrievedSampleEntity = notificationEntityOptional.get();
-            retrievedSampleEntity.setName(categoryServiceRequestDto.getName());
-            retrievedSampleEntity.setDescription(categoryServiceRequestDto.getDescription());
-            iCategoryRepository.save(retrievedSampleEntity);
+            PostEntityDao retrievedPostEntity = notificationEntityOptional.get();
+            retrievedPostEntity.setTitle(postServiceRequestDto.getTitle());
+            retrievedPostEntity.setImgUrl(postServiceRequestDto.getImgUrl());
+            retrievedPostEntity.setDescription(postServiceRequestDto.getDescription());
+//            retrievedPostEntity.setCategory_id(postServiceRequestDto.getCategory_id());
+            iPostRepository.save(retrievedPostEntity);
         }
     }
 }

@@ -14,5 +14,5 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(ServiceEndpoints.POST_ENDPOINT)
 @Tag(name = "Post")
-public class CategoryUpdateController extends BaseUpdateController<CategoryServiceRequestDto, CategoryUpdateService> {
+public class PostUpdateController extends BaseUpdateController<CategoryServiceRequestDto, CategoryUpdateService> {
 }

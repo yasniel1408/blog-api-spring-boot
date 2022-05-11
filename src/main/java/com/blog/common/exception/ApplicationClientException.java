@@ -1,6 +1,7 @@
-package org.zenith.framework.exception;
+package com.blog.common.exception;
 
-import org.zenith.framework.exception.model.MessageKey;
+
+import com.blog.common.exception.model.MessageKey;
 
 /**
  * The type Application client exception.

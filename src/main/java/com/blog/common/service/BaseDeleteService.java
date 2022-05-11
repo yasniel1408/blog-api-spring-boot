@@ -1,9 +1,12 @@
 package com.blog.common.service;
 
+import com.blog.common.dao.BaseAnonymousEntityDao;
+import org.springframework.data.jpa.repository.JpaRepository;
+
 /**
  * The type Base delete service.
  */
-public abstract class BaseDeleteService extends BaseService {
+public abstract class BaseDeleteService<E extends BaseAnonymousEntityDao,R extends JpaRepository<E, Long>> extends BaseService {
 
     /**
      * Delete.
@@ -11,7 +14,12 @@ public abstract class BaseDeleteService extends BaseService {
      * @param id the Id
      */
     public void delete(Long id) {
+
+        logger.entry(id);
+
         executeDelete(id);
+
+        logger.exit();
     }
 
     /**

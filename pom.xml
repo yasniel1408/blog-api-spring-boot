@@ -111,6 +111,36 @@
             <version>1.4.8</version>
         </dependency>
 
+        <!-- JWT -->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>0.9.1</version>
+        </dependency>
+
+        <!-- Spring Security -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>5.6.3</version>
+        </dependency>
+
+        <!-- Logg -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-ext</artifactId>
+            <version>1.7.7</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>

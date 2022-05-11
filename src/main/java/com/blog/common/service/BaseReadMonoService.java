@@ -17,7 +17,11 @@ public abstract class BaseReadMonoService<O extends BaseServiceResponseDto> exte
      */
     public O read(Long id) {
 
+        logger.entry(id);
+
         O response = executeRead(id);
+
+        logger.exit(response);
 
         return response;
     }

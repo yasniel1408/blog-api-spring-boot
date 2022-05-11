@@ -1,5 +1,12 @@
-package org.zenith.framework.security.config;
+package com.blog.common.security.config;
 
+import com.blog.common.config.ServiceEndpoints;
+import com.blog.common.objectmapper.config.UtilitiesObjectMapperConfig;
+import com.blog.common.security.config.helper.AuthenticationExceptionHandler;
+import com.blog.common.security.config.helper.AuthorizationExceptionHandler;
+import com.blog.common.security.config.helper.SecurityResponseBuilder;
+import com.blog.common.security.jwt.JwtAuthenticationFilter;
+import com.blog.common.security.jwt.JwtAuthorizationFilter;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -22,23 +29,17 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.zenith.framework.security.config.helper.AuthenticationExceptionHandler;
-import org.zenith.framework.security.config.helper.AuthorizationExceptionHandler;
-import org.zenith.framework.security.config.helper.SecurityResponseBuilder;
-import org.zenith.framework.security.jwt.JwtAuthenticationFilter;
-import org.zenith.framework.security.jwt.JwtAuthorizationFilter;
-import org.zenith.utilities.objectmapper.config.UtilitiesObjectMapperConfig;
 
-import static org.zenith.data.training.config.SecurityRoleNames.ROLE_ADMIN;
-import static org.zenith.data.training.config.SecurityRoleNames.ROLE_SUPER_ADMIN;
+import static com.blog.common.security.config.SecurityRoleNames.ROLE_ADMIN;
+import static com.blog.common.security.config.SecurityRoleNames.ROLE_SUPER_ADMIN;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
-@ComponentScan("org.zenith.framework.security")
+@ComponentScan("com.blog.common.security")
 @Configuration
 @EnableWebSecurity
 @EnableJpaAuditing
 @EnableGlobalMethodSecurity(prePostEnabled = true)
-@Import(UtilitiesObjectMapperConfig.class)
+    @Import(UtilitiesObjectMapperConfig.class)
 @AllArgsConstructor
 public class FrameworkSecurityConfig extends WebSecurityConfigurerAdapter {
 
@@ -81,34 +82,23 @@ public class FrameworkSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .mvcMatchers(LOGIN_ENDPOINT).permitAll()
                 .mvcMatchers(HttpMethod.GET, ServiceEndpoints.EMAILS_ENDPOINT + GLOBAL_URI).permitAll()
-                .mvcMatchers(HttpMethod.GET, ServiceEndpoints.DISCOUNTS_ENDPOINT + GLOBAL_URI).permitAll()
                 .mvcMatchers(HttpMethod.POST, ServiceEndpoints.USER_REGISTRATIONS_ENDPOINT).permitAll()
                 .mvcMatchers(HttpMethod.PUT, ServiceEndpoints.PASSWORDS_ENDPOINT).permitAll()
                 .mvcMatchers(HttpMethod.POST, ServiceEndpoints.PASSWORDS_TOKENS_ENDPOINT).permitAll()
-                .mvcMatchers(HttpMethod.GET, ServiceEndpoints.STATES_ENDPOINT).permitAll()
-                .mvcMatchers(HttpMethod.GET, ServiceEndpoints.INDUSTRIES_ENDPOINT).permitAll()
-                .mvcMatchers(HttpMethod.GET, ServiceEndpoints.EXAM_TYPES_ENDPOINT).permitAll()
-                .mvcMatchers(HttpMethod.GET, ServiceEndpoints.FREE_EXAMS_ATTEMPTS_ENDPOINT + GLOBAL_URI).permitAll()
-                .mvcMatchers(HttpMethod.GET, ServiceEndpoints.TRAININGS_ENDPOINT + GLOBAL_URI).permitAll()
-                .mvcMatchers(HttpMethod.POST, ServiceEndpoints.FREE_EXAM_PROSPECTS_ENDPOINT).permitAll()
-                .mvcMatchers(HttpMethod.POST, ServiceEndpoints.STRIPE_PAYMENTS_ENDPOINT).permitAll()
-                .mvcMatchers(HttpMethod.POST, ServiceEndpoints.USERS_TRAININGS_ENDPOINT).permitAll()
-                .mvcMatchers(HttpMethod.GET, ServiceEndpoints.USERS_TRAININGS_BUYING_VALIDATIONS_ENDPOINT + GLOBAL_URI).permitAll()
-                .mvcMatchers(HttpMethod.DELETE, ServiceEndpoints.USERS_TRAININGS_ENDPOINT + GLOBAL_URI).hasAnyRole(ROLE_SUPER_ADMIN, ROLE_ADMIN)
 
-                //SERVICE-ADMIN
-                .mvcMatchers(HttpMethod.GET, ServiceEndpoints.QUESTIONS_ENDPOINT + GLOBAL_URI).hasAnyRole(ROLE_SUPER_ADMIN, ROLE_ADMIN)
-                .mvcMatchers(HttpMethod.POST, ServiceEndpoints.QUESTIONS_ENDPOINT).hasAnyRole(ROLE_SUPER_ADMIN, ROLE_ADMIN)
-                .mvcMatchers(HttpMethod.PUT,
-                        ServiceEndpoints.QUESTIONS_ENDPOINT,
-                        ServiceEndpoints.QUESTIONS_STATUSES_ENDPOINT,
-                        ServiceEndpoints.ANSWERS_UPDATE_STATUS_ENDPOINT,
-                        ServiceEndpoints.QUESTIONS_ACTIVATIONS_ENDPOINT
-                ).hasAnyRole(ROLE_SUPER_ADMIN, ROLE_ADMIN)
+                // .hasAnyRole(ROLE_SUPER_ADMIN, ROLE_ADMIN) , .permitAll()
 
-                //SERVICE-PARSER
-                .mvcMatchers(HttpMethod.POST, ServiceEndpoints.GLOSSARIES_ENDPOINT).permitAll()
-                .mvcMatchers(HttpMethod.POST, ServiceEndpoints.CC_QUESTIONS_ENDPOINT).permitAll()
+                //Category
+                .mvcMatchers(HttpMethod.GET, ServiceEndpoints.CATEGORY_ENDPOINT+ GLOBAL_URI).permitAll()
+                .mvcMatchers(HttpMethod.DELETE, ServiceEndpoints.CATEGORY_ENDPOINT).permitAll()
+                .mvcMatchers(HttpMethod.PUT, ServiceEndpoints.CATEGORY_ENDPOINT).permitAll()
+                .mvcMatchers(HttpMethod.POST, ServiceEndpoints.CATEGORY_ENDPOINT).permitAll()
+
+                //Post
+                .mvcMatchers(HttpMethod.GET, ServiceEndpoints.POST_ENDPOINT + GLOBAL_URI).permitAll()
+                .mvcMatchers(HttpMethod.POST, ServiceEndpoints.POST_ENDPOINT).permitAll()
+                .mvcMatchers(HttpMethod.DELETE, ServiceEndpoints.POST_ENDPOINT).permitAll()
+                .mvcMatchers(HttpMethod.PUT, ServiceEndpoints.POST_ENDPOINT).permitAll()
 
                 .anyRequest().authenticated().and()
                 .addFilter(new JwtAuthenticationFilter(authenticationManager(), defaultObjectMapper))

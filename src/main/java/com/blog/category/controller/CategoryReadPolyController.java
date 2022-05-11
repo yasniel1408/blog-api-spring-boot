@@ -1,6 +1,6 @@
 package com.blog.category.controller;
 
-import com.blog.category.dto.CategoryReadPolyServiceRequest;
+import com.blog.category.dto.CategoryReadPolyServiceRequestDto;
 import com.blog.category.dto.CategoryServiceResponseDto;
 import com.blog.category.service.CategoryReadPolyService;
 import com.blog.common.config.ServiceEndpoints;
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(ServiceEndpoints.CATEGORY_ENDPOINT)
 @Tag(name = "Category")
-public class CategoryReadPolyController extends BaseReadPolyController<CategoryReadPolyServiceRequest, CategoryServiceResponseDto, CategoryReadPolyService> {
+public class CategoryReadPolyController extends BaseReadPolyController<CategoryReadPolyServiceRequestDto, CategoryServiceResponseDto, CategoryReadPolyService> {
 
     public CategoryReadPolyController(ResponseEntityCreator<CategoryServiceResponseDto> responseEntityCreator) {
         super(responseEntityCreator);

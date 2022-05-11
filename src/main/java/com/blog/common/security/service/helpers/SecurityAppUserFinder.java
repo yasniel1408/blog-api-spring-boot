@@ -1,10 +1,10 @@
-package org.zenith.framework.security.service.helpers;
+package com.blog.common.security.service.helpers;
 
+import com.blog.common.security.model.AppUser;
+import com.blog.common.security.model.IAppUser;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
-import org.zenith.framework.security.model.AppUser;
-import org.zenith.framework.security.model.IAppUser;
 
 @Component
 @AllArgsConstructor

@@ -1,9 +1,9 @@
-package org.zenith.framework.security.service.helpers;
+package com.blog.common.security.service.helpers;
 
+import com.blog.user.dao.UserEntity;
+import com.blog.user.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
-import org.zenith.data.training.dao.UserRepository;
-import org.zenith.data.training.entity.UserEntity;
 
 /**
  * UserAuthenticatorFinder finds a user entity authenticator.

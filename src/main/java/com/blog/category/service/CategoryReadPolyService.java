@@ -7,7 +7,7 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-import com.blog.category.dto.CategoryReadPolyServiceRequest;
+import com.blog.category.dto.CategoryReadPolyServiceRequestDto;
 import com.blog.category.service.helper.CategoryResponseCreator;
 import com.blog.common.config.paginate.PageInformation;
 import com.blog.common.service.BaseReadPolyService;
@@ -22,15 +22,15 @@ import java.util.List;
  */
 @Service
 @AllArgsConstructor
-public class CategoryReadPolyService extends BaseReadPolyService<CategoryReadPolyServiceRequest, CategoryServiceResponseDto> {
+public class CategoryReadPolyService extends BaseReadPolyService<CategoryReadPolyServiceRequestDto, CategoryServiceResponseDto> {
 
     private final ICategoryRepository iCategoryRepository;
 
     private final CategoryResponseCreator categoryResponseCreator;
 
     @Override
-    protected Page<CategoryServiceResponseDto> executeRead(CategoryReadPolyServiceRequest categoryReadPolyServiceRequest) {
-        PageInformation pageInformation = categoryReadPolyServiceRequest.getPageInformation();
+    protected Page<CategoryServiceResponseDto> executeRead(CategoryReadPolyServiceRequestDto categoryReadPolyServiceRequestDto) {
+        PageInformation pageInformation = categoryReadPolyServiceRequestDto.getPageInformation();
         int pageNumber = 0;
         int pageSize = 25;
         if (pageInformation != null) {

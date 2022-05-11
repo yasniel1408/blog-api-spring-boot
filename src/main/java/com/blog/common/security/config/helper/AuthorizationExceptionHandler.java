@@ -1,17 +1,19 @@
-package org.zenith.framework.security.config.helper;
+package com.blog.common.security.config.helper;
 
+import com.blog.common.exception.model.MessageKey;
 import lombok.AllArgsConstructor;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.stereotype.Component;
-import org.zenith.framework.exception.model.MessageKey;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+import com.blog.common.security.config.helper.SecurityResponseBuilder;
+
 /**
- * <code>AuthorizationExceptionHandler</code> handle the exceptions thrown by {@link org.zenith.framework.security.service.AppUserDetailsService} class
+ * <code>AuthorizationExceptionHandler</code> handle the exceptions thrown by {@link com.blog.common.security.service.AppUserDetailsService} class
  * Mainly all the authorization related exceptions (runtime ones) will fall in here
  */
 @Component

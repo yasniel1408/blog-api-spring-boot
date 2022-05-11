@@ -1,4 +1,4 @@
-package com.blog.category.controller;
+package com.blog.post.controller;
 
 import com.blog.common.config.ServiceEndpoints;
 import com.blog.common.controller.BaseDeleteController;
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
  * The type Category delete controller.
  */
 @RestController
-@RequestMapping(ServiceEndpoints.CATEGORY_ENDPOINT)
-@Tag(name = "Category")
-public class CategoryDeleteController extends BaseDeleteController<BaseDeleteService> {
+@RequestMapping(ServiceEndpoints.POST_ENDPOINT)
+@Tag(name = "Post")
+public class PostDeleteController extends BaseDeleteController<BaseDeleteService> {
 
 }

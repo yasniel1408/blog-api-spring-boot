@@ -30,8 +30,12 @@ public abstract class BaseCreateController<I extends BaseServiceRequestDto, O ex
     @PostMapping
     @Operation(summary = "Create")
     public ResponseEntity<O> create(@Valid @RequestBody I request) {
-        O response = service.executeCreate(request);
+        logger.entry(request);
+
+        O response = service.create(request);
         ResponseEntity<O> responseEntity = createPostResponseEntity(response);
+
+        logger.exit(responseEntity);
         return responseEntity;
     }
 

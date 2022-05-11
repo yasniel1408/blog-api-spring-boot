@@ -1,38 +1,36 @@
-package com.blog.category.service;
+package com.blog.post.service;
 
-import com.blog.category.dao.CategoryEntityDao;
-import com.blog.category.dto.CategoryReadMonoServiceResponseDto;
-import com.blog.category.dto.CategoryServiceResponseDto;
-import com.blog.category.repository.ICategoryRepository;
-import com.blog.category.service.helper.CategoryReadMonoResponseCreator;
-import com.blog.category.service.helper.CategoryResponseCreator;
 import com.blog.common.service.BaseReadMonoService;
+import com.blog.post.dao.PostEntityDao;
+import com.blog.post.dto.PostReadMonoServiceResponseDto;
+import com.blog.post.repository.IPostRepository;
+import com.blog.post.service.helper.PostReadMonoResponseCreator;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
 /**
- * The type Sample read mono service.
+ * The type Post read mono service.
  */
 @Service
 @AllArgsConstructor
-public class CategoryReadMonoService extends BaseReadMonoService<CategoryReadMonoServiceResponseDto> {
+public class PostReadMonoService extends BaseReadMonoService<PostReadMonoServiceResponseDto> {
 
-    private final ICategoryRepository iCategoryRepository;
+    private final IPostRepository iPostRepository;
 
-    private final CategoryReadMonoResponseCreator categoryResponseCreator;
+    private final PostReadMonoResponseCreator postReadMonoResponseCreator;
 
     @Override
-    protected CategoryReadMonoServiceResponseDto executeRead(Long id) {
-        Optional<CategoryEntityDao> notificationEntityOptional = iCategoryRepository.findById(id);
-        CategoryEntityDao categoryEntityDao;
-        CategoryReadMonoServiceResponseDto categoryReadMonoServiceResponseDto = null;
+    protected PostReadMonoServiceResponseDto executeRead(Long id) {
+        Optional<PostEntityDao> notificationEntityOptional = iPostRepository.findById(id);
+        PostEntityDao postEntityDao;
+        PostReadMonoServiceResponseDto postReadMonoServiceResponseDto = null;
         if (notificationEntityOptional.isPresent()) {
-            categoryEntityDao = notificationEntityOptional.get();
-            categoryReadMonoServiceResponseDto = categoryResponseCreator.create(categoryEntityDao);
+            postEntityDao = notificationEntityOptional.get();
+            postReadMonoServiceResponseDto = postReadMonoResponseCreator.create(postEntityDao);
         }
-        return categoryReadMonoServiceResponseDto;
+        return postReadMonoServiceResponseDto;
     }
 
 }

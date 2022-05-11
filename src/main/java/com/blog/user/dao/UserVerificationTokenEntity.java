@@ -1,4 +1,4 @@
-package org.zenith.data.training.entity;
+package com.blog.user.dao;
 
 import lombok.Getter;
 import lombok.Setter;

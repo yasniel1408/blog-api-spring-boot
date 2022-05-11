@@ -14,5 +14,4 @@ import lombok.ToString;
 public class CategoryServiceResponseDto extends BaseServiceResponseDto {
     private String name;
     private String description;
-    private String createdDate;
 }

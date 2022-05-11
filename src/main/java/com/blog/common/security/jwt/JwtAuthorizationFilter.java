@@ -1,5 +1,7 @@
-package com.blog.common.jwt;
+package com.blog.common.security.jwt;
 
+import com.blog.common.exception.model.MessageKey;
+import com.blog.common.security.model.AppUser;
 import io.jsonwebtoken.*;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.ext.XLogger;
@@ -11,8 +13,6 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
-import org.zenith.framework.exception.model.MessageKey;
-import org.zenith.framework.security.model.AppUser;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
@@ -28,7 +28,7 @@ import java.util.Map;
  */
 public class JwtAuthorizationFilter extends BasicAuthenticationFilter {
 
-    private final XLogger logger = XLoggerFactory.getXLogger(getClass());
+    private final XLogger xlogger = XLoggerFactory.getXLogger(getClass());
 
     public static final String HEADER_MESSAGE = "HEADER_MESSAGE";
 
@@ -74,7 +74,7 @@ public class JwtAuthorizationFilter extends BasicAuthenticationFilter {
                     headerMessage = "TOKEN EXPIRED";
                     userMessageKey = MessageKey.AUTHENTICATION_TOKEN_EXPIRED;
                 } else {
-                    logger.catching(exception);
+                    xlogger.catching(exception);
                     if (MalformedJwtException.class.equals(exception.getClass())) {
                         headerMessage = "MALFORMED JWT";
                         userMessageKey = MessageKey.MALFORMED_JWT_ERROR;

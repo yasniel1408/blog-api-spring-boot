@@ -1,8 +1,8 @@
-package org.zenith.data.training.dao;
+package com.blog.user.repository;
 
+import com.blog.user.dao.BaseTokenEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.NoRepositoryBean;
-import org.zenith.data.training.entity.BaseTokenEntity;
 
 import java.util.Optional;
 

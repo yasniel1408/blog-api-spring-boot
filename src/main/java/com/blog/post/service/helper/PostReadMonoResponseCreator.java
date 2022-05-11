@@ -1,35 +1,35 @@
 package com.blog.post.service.helper;
 
-import com.blog.category.dao.CategoryEntityDao;
-import com.blog.category.dto.CategoryReadMonoServiceResponseDto;
+import com.blog.post.dao.PostEntityDao;
+import com.blog.post.dto.PostReadMonoServiceResponseDto;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
 /**
- * The type Category response creator.
+ * The type Post response creator.
  */
 @Component
-public class CategoryReadMonoResponseCreator {
+public class PostReadMonoResponseCreator {
 
     private final ModelMapper modelMapper;
 
     /**
-     * Instantiates a new Category response creator.
+     * Instantiates a new Post response creator.
      *
      * @param modelMapper the model mapper
      */
-    public CategoryReadMonoResponseCreator(ModelMapper modelMapper) {
+    public PostReadMonoResponseCreator(ModelMapper modelMapper) {
         this.modelMapper = modelMapper;
     }
 
     /**
-     * Create category service response.
+     * Create post service response.
      *
-     * @param categoryEntityDao the category entity
-     * @return the category service response
+     * @param postEntityDao the post entity
+     * @return the post service response
      */
-    public CategoryReadMonoServiceResponseDto create(CategoryEntityDao categoryEntityDao) {
-        return modelMapper.map(categoryEntityDao, CategoryReadMonoServiceResponseDto.class);
+    public PostReadMonoServiceResponseDto create(PostEntityDao postEntityDao) {
+        return modelMapper.map(postEntityDao, PostReadMonoServiceResponseDto.class);
     }
 
 }

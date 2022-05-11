@@ -1,18 +1,19 @@
-package org.zenith.framework.security.config.helper;
+package com.blog.common.security.config.helper;
 
+import com.blog.common.exception.model.MessageKey;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.stereotype.Component;
-import org.zenith.framework.exception.model.MessageKey;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import com.blog.common.security.config.helper.SecurityResponseBuilder;
 
-import static org.zenith.framework.security.jwt.JwtAuthorizationFilter.DEVELOPER_MESSAGE;
-import static org.zenith.framework.security.jwt.JwtAuthorizationFilter.HEADER_MESSAGE;
-import static org.zenith.framework.security.jwt.JwtAuthorizationFilter.USER_MESSAGE_KEY;
+import static com.blog.common.security.jwt.JwtAuthorizationFilter.DEVELOPER_MESSAGE;
+import static com.blog.common.security.jwt.JwtAuthorizationFilter.HEADER_MESSAGE;
+import static com.blog.common.security.jwt.JwtAuthorizationFilter.USER_MESSAGE_KEY;
 
 /**
  * AuthenticationExceptionHandler handle all the exceptions thrown by {@link org.zenith.framework.security.service.AppUserDetailsService} class

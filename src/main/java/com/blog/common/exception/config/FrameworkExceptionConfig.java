@@ -1,4 +1,4 @@
-package org.zenith.framework.exception.config;
+package com.blog.common.exception.config;
 
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
@@ -10,7 +10,7 @@ import org.springframework.context.support.ReloadableResourceBundleMessageSource
  * The type Framework exception config.
  */
 @Configuration
-@ComponentScan(basePackages = "org.zenith.framework.exception")
+@ComponentScan(basePackages = "com.blog.common.exception")
 public class FrameworkExceptionConfig {
 
     private static final String ERROR_MESSAGES_FILE_NAME = "error-messages";

@@ -1,9 +1,9 @@
-package org.zenith.framework.exception.helper;
+package com.blog.common.exception.helper;
 
+import com.blog.common.exception.model.MessageKey;
 import lombok.AllArgsConstructor;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Component;
-import org.zenith.framework.exception.model.MessageKey;
 
 import java.util.Locale;
 

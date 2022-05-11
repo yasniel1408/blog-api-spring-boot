@@ -23,7 +23,11 @@ public abstract class BaseDeleteController<S extends BaseDeleteService> extends 
     @Operation(summary = "Delete")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable Long id) {
+        logger.entry(id);
+
         service.delete(id);
+
+        logger.exit();
     }
 
 }

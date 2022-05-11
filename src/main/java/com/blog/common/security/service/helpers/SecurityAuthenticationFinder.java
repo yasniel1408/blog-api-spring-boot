@@ -1,4 +1,4 @@
-package org.zenith.framework.security.service.helpers;
+package com.blog.common.security.service.helpers;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;

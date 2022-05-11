@@ -19,7 +19,13 @@ public abstract class BaseReadPolyService<I extends BaseServiceRequestDto, O ext
      * @return the page
      */
     public Page<O> read(I request) {
+
+        logger.entry(request);
+
         Page<O> responses = executeRead(request);
+
+        logger.exit(responses);
+
         return responses;
     }
 

@@ -1,4 +1,4 @@
-package org.zenith.utilities.objectmapper.serialization;
+package com.blog.common.objectmapper.serialization;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;

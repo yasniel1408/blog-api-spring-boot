@@ -6,11 +6,10 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 /**
- * The type Category Paginated service request.
+ * The type Post Paginated service request.
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 public final class PostReadPolyServiceRequestDto extends BasePaginatedServiceRequest {
-    
 }

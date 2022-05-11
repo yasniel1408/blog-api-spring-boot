@@ -1,16 +1,12 @@
-package org.zenith.data.training.entity;
+package com.blog.user.dao;
 
+import com.blog.common.dao.BaseAnonymousEntityDao;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.Hibernate;
 import org.hibernate.annotations.NaturalId;
-import org.zenith.data.postgresbase.entity.BaseAnonymousEntity;
 
-import javax.persistence.Column;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.MappedSuperclass;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
@@ -20,7 +16,7 @@ import java.util.Objects;
 @MappedSuperclass
 @Getter
 @Setter
-public abstract class BaseTokenEntity extends BaseAnonymousEntity {
+public abstract class BaseTokenEntity extends BaseAnonymousEntityDao {
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")

@@ -11,8 +11,9 @@ import lombok.ToString;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-public class CategoryServiceResponseDto extends BaseServiceResponseDto {
+public class CategoryReadMonoServiceResponseDto extends BaseServiceResponseDto {
     private String name;
     private String description;
+    private String posts;
     private String createdDate;
 }

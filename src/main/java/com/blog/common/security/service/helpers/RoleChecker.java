@@ -1,11 +1,11 @@
-package org.zenith.framework.security.service.helpers;
+package com.blog.common.security.service.helpers;
 
+import com.blog.common.security.model.IAppUser;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Component;
-import org.zenith.framework.security.model.IAppUser;
 
-import static org.zenith.data.training.config.SecurityRoleNames.PREFIX_ROLE;
+import static com.blog.common.security.config.SecurityRoleNames.PREFIX_ROLE;
 
 @Component
 @AllArgsConstructor

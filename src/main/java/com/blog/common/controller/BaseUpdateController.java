@@ -27,7 +27,11 @@ public abstract class BaseUpdateController<I extends BaseServiceRequestDto, S ex
     @Operation(summary = "Update")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void update(@Valid @RequestBody I request) {
+        logger.entry(request);
+
         service.update(request);
+
+        logger.exit();
     }
 
 }

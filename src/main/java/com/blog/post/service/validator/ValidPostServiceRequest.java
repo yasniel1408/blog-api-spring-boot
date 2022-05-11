@@ -12,7 +12,7 @@ import java.lang.annotation.*;
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = PostManagerServiceRequestValidator.class)
-public @interface ValidCactegoryServiceRequest {
+public @interface ValidPostServiceRequest {
 
     /**
      * Message string.

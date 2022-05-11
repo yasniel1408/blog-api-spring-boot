@@ -1,29 +1,29 @@
-package com.blog.category.service;
+package com.blog.post.service;
 
-import com.blog.category.dao.CategoryEntityDao;
-import com.blog.category.dto.CategoryServiceRequestDto;
-import com.blog.category.dto.CategoryServiceResponseDto;
-import com.blog.category.repository.ICategoryRepository;
-import com.blog.category.service.helper.CategoryEntityCreator;
-import com.blog.category.service.helper.CategoryResponseCreator;
 import com.blog.common.service.BaseCreateService;
+import com.blog.post.dao.PostEntityDao;
+import com.blog.post.dto.PostServiceRequestDto;
+import com.blog.post.dto.PostServiceResponseDto;
+import com.blog.post.repository.IPostRepository;
+import com.blog.post.service.helper.PostEntityCreator;
+import com.blog.post.service.helper.PostResponseCreator;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
-public class CategoryCreateService extends BaseCreateService<CategoryServiceRequestDto, CategoryServiceResponseDto> {
+public class PostCreateService extends BaseCreateService<PostServiceRequestDto, PostServiceResponseDto> {
 
-    private final ICategoryRepository iCategoryRepository;
+    private final IPostRepository iPostRepository;
 
-    private final CategoryResponseCreator categoryResponseCreator;
+    private final PostResponseCreator postResponseCreator;
 
-    private final CategoryEntityCreator categoryEntityCreator;
+    private final PostEntityCreator postEntityCreator;
 
     @Override
-    public CategoryServiceResponseDto executeCreate(CategoryServiceRequestDto categoryServiceRequestDto) {
-        CategoryEntityDao categoryEntityDaoToBeCreated = categoryEntityCreator.create(categoryServiceRequestDto);
-        CategoryEntityDao categoryEntityDao = iCategoryRepository.save(categoryEntityDaoToBeCreated);
-        return categoryResponseCreator.create(categoryEntityDao);
+    public PostServiceResponseDto executeCreate(PostServiceRequestDto postServiceRequestDto) {
+        PostEntityDao postEntityDaoToBeCreated = postEntityCreator.create(postServiceRequestDto);
+        PostEntityDao postEntityDao = iPostRepository.save(postEntityDaoToBeCreated);
+        return postResponseCreator.create(postEntityDao);
     }
 }

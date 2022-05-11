@@ -1,13 +1,13 @@
-package org.zenith.framework.security.service;
+package com.blog.common.security.service;
 
+import com.blog.common.security.model.AppUser;
+import com.blog.common.security.model.IAppUser;
+import com.blog.user.dao.UserEntity;
+import com.blog.user.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import org.zenith.data.training.dao.UserRepository;
-import org.zenith.data.training.entity.UserEntity;
-import org.zenith.framework.security.model.AppUser;
-import org.zenith.framework.security.model.IAppUser;
 
 import java.util.Optional;
 

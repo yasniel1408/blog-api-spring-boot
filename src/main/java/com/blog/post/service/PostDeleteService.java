@@ -1,23 +1,24 @@
-package com.blog.category.service;
+package com.blog.post.service;
 
-import com.blog.category.repository.ICategoryRepository;
 import com.blog.common.service.BaseDeleteService;
+import com.blog.post.dao.PostEntityDao;
+import com.blog.post.repository.IPostRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 /**
- * The type Sample delete service.
+ * The type Post delete service.
  */
 @Service
 @AllArgsConstructor
-public class CategoryDeleteService extends BaseDeleteService {
+public class PostDeleteService extends BaseDeleteService<PostEntityDao, IPostRepository > {
 
-    private final ICategoryRepository iCategoryRepository;
+    private final IPostRepository iPostRepository;
 
     @Override
     protected void executeDelete(Long id) {
-        if (iCategoryRepository.existsById(id)) {
-            iCategoryRepository.deleteById(id);
+        if (iPostRepository.existsById(id)) {
+            iPostRepository.deleteById(id);
         }
     }
 

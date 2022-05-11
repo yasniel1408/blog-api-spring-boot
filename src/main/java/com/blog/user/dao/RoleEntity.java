@@ -1,10 +1,10 @@
-package org.zenith.data.training.entity;
+package com.blog.user.dao;
 
+import com.blog.common.dao.BaseEntityDao;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.Hibernate;
 import org.hibernate.annotations.NaturalId;
-import org.zenith.data.postgresbase.entity.BaseEntity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -20,7 +20,7 @@ import java.util.Set;
 @Table(name = "role")
 @Getter
 @Setter
-public class RoleEntity extends BaseEntity {
+public class RoleEntity extends BaseEntityDao {
 
     @Column(name = "name")
     @NaturalId

@@ -11,5 +11,5 @@ import lombok.ToString;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-public final class CategoryReadPolyServiceRequest extends BasePaginatedServiceRequest {
+public final class CategoryReadPolyServiceRequestDto extends BasePaginatedServiceRequest {
 }

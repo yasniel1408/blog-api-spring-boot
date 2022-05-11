@@ -1,4 +1,4 @@
-package org.zenith.framework.exception.model;
+package com.blog.common.exception.model;
 
 /**
  * The enum Message key.
